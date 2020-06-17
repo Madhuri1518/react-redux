@@ -1,24 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReducerHookEx1 from './ReducerEx/ReducerHookEx1';
+import ReducerHookEx2 from './ReducerEx/ReducerHookEx2';
+import StoreEx from './StoreEx';
+
+import {useSelector} from 'react-redux'
+
 
 function App() {
+
+  const counter = useSelector(state => state.counter)
+  const isLogged = useSelector(state => state.isLogged)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <h2>React basic reducer</h2>
+        <ReducerHookEx1 />
+      </div>
+
+      <div>
+        <h2>React reducer ex todo </h2>
+        <ReducerHookEx2 />
+      </div>
+
+      <div>
+        <h2>Redux ex  </h2>
+        <StoreEx />
+      </div>
+
     </div>
   );
 }
